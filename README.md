@@ -1,45 +1,22 @@
-# backend_taha
+# engine
 
-Backend Express prêt à être partagé entre plusieurs apps, avec documentation API intégrée et architecture plus avancée (controllers/services/validators).
+Squelette d'un petit moteur 3D en C++ (prototype) avec :
 
-## Installation
+- Types mathématiques de base (`Vec3`, `Mat4`)
+- `Transform`, `Camera`, `Mesh`
+- `Renderer` minimal qui simule un draw call
+- Un exécutable de démonstration et un binaire de tests
+
+## Build
 
 ```bash
-npm install
+cmake -S . -B build
+cmake --build build
 ```
 
-## Lancement
+## Exécuter
 
 ```bash
-npm run dev
+./build/engine_demo
+ctest --test-dir build --output-on-failure
 ```
-
-## Documentation API
-
-- Swagger UI: `http://localhost:5000/api/docs`
-- JSON OpenAPI: `http://localhost:5000/api/docs.json`
-
-## Endpoints principaux (v1)
-
-- Auth: `/api/v1/auth`
-- Utilisateurs: `/api/v1/users`
-- Posts: `/api/v1/posts`
-- Produits: `/api/v1/products`
-
-## Sécurité
-
-Les routes protégées attendent un header `Authorization: Bearer <token>`.
-
-## Variables d'environnement
-
-Créez un fichier `.env` :
-
-```
-MONGODB_URI=mongodb://localhost:27017/myapp
-PORT=5000
-```
-
-
-## Nouveau repo C++
-
-- `engine/`: squelette d'un moteur 3D C++ (CMake).
