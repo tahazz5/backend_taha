@@ -38,3 +38,8 @@ Créez un fichier `.env` :
 MONGODB_URI=mongodb://localhost:27017/myapp
 PORT=5000
 ```
+
+
+## Nouveau repo C++
+
+- `engine/`: squelette d'un moteur 3D C++ (CMake).
